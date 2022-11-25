@@ -1,0 +1,13 @@
+:root {
+    --color-azul: #1400FF;
+    --background: #FFFFFF;
+    --degrade: #3F33CA;
+}
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--background);
+    width: auto;
+    height: auto;
+}
