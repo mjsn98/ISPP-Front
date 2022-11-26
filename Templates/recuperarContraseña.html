@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,7 +24,8 @@
 </head>
 
 <body>
-    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+    <header
+        class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
         <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
             <img src="../static/img/logo.jpg" alt="logoispp" width="60" height="60">
         </a>
@@ -33,15 +37,15 @@
     </header>
     <div class="login">
         <div class="form">
-            <form class="recuperarContraseña-form" action="" method="POST">
+            <form class="recuperarContraseña-form mb-4" action="" method="POST">
                 <img class="mb-4" src="../static/img/logo.jpg" alt="" width="100" height="100">
                 <!-- 
                 <div class="alert alert-primary alert-dismissible" role="alert">
                     <strong></strong>
                 </div> -->
 
-                <h1 class="titulo-recuperarContraseña">Recuperar Contraseña</h1>
-
+                <h1 class="mb-4">Recuperar Contraseña</h1>
+            
                 <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                 <input type="email" id="email" name="email" placeholder="Correo Electronico" />
 
