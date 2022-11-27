@@ -17,7 +17,7 @@
 <body>
     <header class="py-3 mb-3 border-bottom">
         <div class="container-fluid d-grid gap-6 align-items-center" style="grid-template-columns: 1fr 1fr 1fr;">
-            
+
             <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
                 <img src="../static/img/logo.jpg" alt="logoispp" width="60" height="60">
             </a>
@@ -67,11 +67,11 @@
         </div>
     </header>
     <main>
-        <div class="d-flex flex-column flex-shrink-0 bg-light" style="width: 4.5rem;">
+        <div class="d-grid bg-light" style="width: 100%; gap:20px; grid-template-columns: auto auto;">
 
-            <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+            <ul class="nav nav-pills nav-flush flex-column mb-auto text-center" style="width: 10%">
                 <li class="nav-item">
-                    <a href="#" class="nav-link active py-3 border-bottom rounded-0" aria-current="page"
+                    <a href="#" class="nav-link py-3 border-bottom rounded-0" aria-current="page"
                         data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Home"
                         data-bs-original-title="Home">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -82,7 +82,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="nav-link py-3 border-bottom rounded-0" data-bs-toggle="tooltip"
+                    <a href="#" class="nav-link  active py-3 border-bottom rounded-0" data-bs-toggle="tooltip"
                         data-bs-placement="right" aria-label="Dashboard" data-bs-original-title="Dashboard">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-person-vcard" viewBox="0 0 16 16">
@@ -130,6 +130,128 @@
                     </a>
                 </li>
             </ul>
+
+            <div class="d-flex flex-column bg-light" style="width: 90%;">
+                <div>
+                    <h2 class="mb-4" id="modDatos">Modificar/Actualizar Datos Personales</h2>
+                    <form class="row row-cols-1 row-cols-sm-2 row-cols-md-3 ">
+
+                        <div class="col mb-4">
+                            <label class="labelforms" for="cuil">Cuil *</label>
+                            <input type="text" id="cuil" name="cuil" placeholder="x-xx.xxx.xxx-x">
+                        </div>
+
+                        <div class="col mb-4">
+                            <label class="labelforms" for="nombre">Nombre *</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre"
+                                required="true">
+                        </div>
+
+                        <div class="col mb-4">
+                            <label class="labelforms" for="apellido">Apellido *</label>
+                            <input type="text" id="apellido" name="apellido" placeholder="Escribe tu apellido"
+                                required="true">
+                        </div>
+
+
+                        <div class="col mb-4">
+                            <label for="email">Email *</label>
+                            <input type="text" name="email" id="email" placeholder="nombre@ejemplo.com" required="true">
+                        </div>
+
+                        <br>
+                        <div class="col mb-4">
+                            <label class="labelforms" for="telefono">Telefono *</label>
+                            <input type="text" id="telefono" name="telefono" required="true" placeholder="xxxxxxxxxx"
+                                required="true">
+                        </div>
+                        <div class="col mb-4">
+                            <label class="labelforms" for="fechanac">Fecha de Nac. *</label>
+                            <input type="text" name="fechanac" id="fechanac" placeholder="xx/xx/xxxx" required="true">
+                        </div>
+
+                    </form>
+                </div>
+
+                <div>
+                    <h3 class="mb-4" id="domicilio">Domicilio de Residencia</h3>
+                    <form class="row row-cols-1 row-cols-sm-2 row-cols-md-3 ">
+                        <div class="col mb-4">
+                            <label class="labelforms" for="provincia">Provincia</label>
+                            <input type="text" name="provincia" id="provincia">
+                        </div>
+                        <div class="col mb-4">
+                            <label class="labelforms" for="departamento">Departamento</label>
+                            <input type="text" name="departamento" id="departamento">
+                        </div>
+                        <div class="col mb-4">
+                            <label class="labelforms" for="localidad">Localidad</label>
+                            <input type="text" name="localidad" id="localidad">
+                        </div>
+                        <div class="col mb-4">
+                            <label class="labelforms" for="barrio">Barrio</label>
+                            <input type="text" name="barrio" id="barrio">
+                        </div>
+                        <div class="col mb-4">
+                            <label class="labelforms" for="calle">Calle</label>
+                            <input type="text" name="calle" id="calle">
+                        </div>
+                        <div class="col mb-4">
+                            <label class="labelforms" for="altura">Altura</label>
+                            <input type="text" name="altura" id="altura">
+                        </div>
+                        <div class="col mb-4">
+                            <label class="labelforms" for="manzana">Manzana</label>
+                            <input type="text" name="manzana" id="manzana">
+                        </div>
+                        <div class="col mb-4">
+                            <label class="labelforms" for="lote">Lote</label>
+                            <input type="text" name="lote" id="lote">
+                        </div>
+                        <div class="col mb-4">
+                            <label class="labelforms" for="piso">Piso</label>
+                            <input type="text" name="piso" id="piso">
+                        </div>
+                        <div class="col mb-4">
+                            <label class="labelforms" for="numdepto">Numero de Departamento</label>
+                            <input type="text" name="numdepto" id="numdepto">
+                        </div>
+
+                    </form>
+                </div>
+
+                <div class="d-flex flex-column">
+                    <h4 id="ActContraseña">Actualizar Contraseña</h4>
+                    <p>Consideraciones generales para actualizar su contraseña <br>
+                        *Su contraseña no puede ser informacion personal <br>
+                        *Su contraseña debe contener 8 caracteres <br>
+                        *Su contraseña no puede ser enteramente numerica <br>
+                        *Su contraseña debe contener letras mayusculas, minusculas, numeros y al menos un caracter
+                        especial
+
+                    </p>
+                    <form class="row align-items-center mb-4 g-3">
+
+                        <div class="col">
+                            <label class="labelforms" for="contraseñaActual">Contraseña actual</label>
+                            <input type="password" name="contraseñaActual" id="contraseñaActual" required="true">
+                        </div>
+
+                        <div class="col">
+                            <label class="labelforms" for="contraseñaNew">Nueva contraseña</label>
+                            <input type="password" name="contraseñaNew" id="contraseñaNew" required="true">
+                        </div>
+
+                        <div class="col">
+                            <label class="labelforms" for="confirmcontraseña">Confirmar contraseña</label>
+                            <input type="password" name="confirmcontraseña" id="confirmcontraseña" required="true">
+                        </div>
+                    </form>
+
+                </div>
+
+                <input type="submit" value="Enviar"><br>
+            </div>
         </div>
     </main>
 
