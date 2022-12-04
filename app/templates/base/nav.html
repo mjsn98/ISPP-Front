@@ -1,0 +1,76 @@
+<nav
+  id="main-navbar"
+  class="navbar navbar-expand-md navbar-light bg-white fixed-top"
+>
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    
+    {% if current_user.is_authenticated%}
+    <!-- Toggle button sidebar -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#sidebarMenu"
+      aria-expanded="false"
+      aria-controls="sidebarMenu"
+    >
+      <i class="bi bi-list-task"></i>
+    </button>
+    {%endif%}
+    <!-- Brand -->
+    <a
+      class="navbar-brand mx-2"
+      href="{{url_for('home.index')}}"
+      rel="home"
+    >
+      <strong>I.S.P.P. N° 1</strong> 
+    </a>
+
+    <!-- Toggle button navbar -->
+    <button
+      class="navbar-toggler collapsed"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbartopside"
+      aria-controls="navbartopside"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+    <i class="bi bi-caret-down-fill"></i>
+    </button>
+
+    <!-- Right links -->
+    <div class="navbar-collapse collapse" id="navbartopside">
+      <ul class="navbar-nav ms-auto d-flex flex-md-row flex-column align-items-center">
+        <!-- Notification dropdown -->
+        {% if current_user.is_authenticated %}
+        {%if session['perfilid']%}
+        <li class="nav-item me-3 me-lg-0">
+          <a class="nav-link" href="{{url_for('usuario.index')}}">
+            <i class="bi bi-house-door-fill mx-1"></i>Inicio
+          </a>
+        </li>
+        {%endif%}
+        <li class="nav-item me-3 me-lg-0"> 
+          <a class="nav-link" href="{{url_for('auth.logout')}}">
+            <i class="bi bi-box-arrow-in-right mx-1"></i>Cerrar Sesión
+          </a>
+        </li>
+        {% else %}
+        <li class="nav-item me-3 me-lg-0">
+          <a class="nav-link" href="{{url_for('home.index')}}">
+            <i class="bi bi-house-door-fill mx-1"></i>Inicio
+          </a>
+        </li>
+        <li class="nav-item me-3 me-lg-0">
+          <a class="nav-link" href="{{url_for('auth.login')}}">
+            <i class="bi bi-person-circle mx-1"></i>Iniciar Sesion
+          </a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+  <!-- Container wrapper -->
+</nav>

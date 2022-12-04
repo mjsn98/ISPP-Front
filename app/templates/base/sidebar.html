@@ -1,0 +1,71 @@
+{%if current_user.is_authenticated and session['perfilid'] %}
+<nav id="sidebarMenu" class="collapse d-md-block sidebar col-2 collapse bg-white">
+  <div class="position-sticky h-100">
+    <div class="list-group list-group-flush h-100 d-flex flex-column bd-highlight mb-3">
+      <a href="{{url_for('usuario.mostrar_Datospersonales_usuarioperfil')}}"
+        class="list-group-item list-group-item-action py-2 ripple">
+        <span> <strong>Datos Personales</strong> </span>
+      </a>
+      <!-- Bedeles -->
+      {%if session['perfilid'] == 5%}
+      <!-- <a href="{{url_for('bedel.mostrar_datoslaborales_usuarioperfil')}}"
+        class="list-group-item list-group-item-action py-2 ripple">
+        <span><strong> Datos Laborales </strong></span>
+      </a> -->
+      <a href="{{url_for('bedel.mostrar_carreras_usuarioperfil')}}"
+        class="list-group-item list-group-item-action py-2 ripple">
+        <span> <strong> Mis carreras </strong> </span>
+      </a>
+      <!-- <a href="{{url_for('bedel.alta_añadirusuario_usuarioperfil')}}"
+        class="list-group-item list-group-item-action py-2 ripple">
+        <span> <strong> Añadir usuario </strong> </span>
+      </a> -->
+      <!-- Si el usuarioperfil del perfil que se logio está habilitado -->
+      {% if session['usuarioperfilactivo']%}
+      <a href="{{url_for('bedel.mostrar_alumnos')}}" class="list-group-item list-group-item-action py-2 ripple">
+        <span> <strong> Administrar Usuarios</strong> </span>
+      </a>
+      {%endif%}
+
+      {%endif%}
+
+      <!-- Docentes -->
+      {%if session['perfilid'] == 6%}
+      <a href="#" class="list-group-item list-group-item-action py-2 ripple">
+        <span> <strong> Mis Carreras </strong></span>
+      </a>
+      {%endif%}
+
+      <!-- Alumno -->
+      {%if session['perfilid'] == 7%}
+      <a href="{{url_for('alumno.mostrar_datossecundaria_usuarioperfil')}}"
+        class="list-group-item list-group-item-action py-2 ripple">
+        <span> <strong> Datos Secundaria</strong> </span>
+      </a>
+      <!-- <a href="{{url_for('alumno.mostrar_datosacademicos_usuarioperfil')}}"
+        class="list-group-item list-group-item-action py-2 ripple">
+        <span> <strong> Datos Academicos </strong> </span>
+      </a> -->
+      <a href="{{url_for('alumno.mostrar_carreras_usuarioperfil')}}"
+        class="list-group-item list-group-item-action py-2 ripple">
+        <span> <strong> Mis carreras </strong> </span>
+      </a>
+      <!-- inscripcion a materias -->
+      <!-- <a href="#"
+        class="list-group-item list-group-item-action py-2 ripple">
+        <span> <strong>Inscripcion a materia</strong> </span>
+      </a> -->
+      {%endif%}
+
+
+      <div class="cambiarperfil mt-auto bd-highlight" id="cambiarperfil">
+        <a href="{{url_for('auth.seleccionar_perfil')}}" class="list-group-item list-group-item-action py-2 ripple ">
+          <span> <strong> Cambiar Perfil - <div id="perfilidobtenido" style="display:inline;"></div> </strong> </span>
+        </a>
+      </div>
+
+
+    </div>
+  </div>
+</nav>
+{%endif%}

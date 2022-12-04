@@ -1,0 +1,93 @@
+{% extends 'base/base.html' %}
+
+{% block titulo %}Habilitar Usuario{% endblock%}
+
+{%block head%}
+{{super()}}
+<link
+  rel="stylesheet"
+  href="{{url_for('static',filename='css/first_login.css')}}"
+/>
+{%endblock%} {%block navbar%} {{super()}} {%endblock%}
+
+{% block content %}
+<form action="{{ url_for('auth.habilitar_usuario') }}" class="form-usuario container d-flex justify-content-center align-items-center">
+  <div class="container-md container">
+    <div class="card">
+      <h1 class="card-header display-12 text-center">Habilitación de Usuario</h1>
+      <hr class="w-100 m-0 mb-4" />
+
+      <div class="row mx-2">
+        <!-- CUIL -->
+        <div class="mb-3 col-12 col-md-6">
+          <input
+            type="text"
+            class="form-control form-custom"
+            name="CUIL"
+            id="CUIL"
+            placeholder="CUIL"
+          />
+        </div>
+
+        <!-- Fecha de Nacimiento -->
+        <div class="mb-3 col-12 col-md-6 mx-auto">
+          <input
+            type="date"
+            class="form-control form-custom"
+            name="fnac"
+            id="fnac"
+            placeholder="Fecha de Nacimiento"
+          />
+        </div>
+      </div>
+
+
+      <div class="row mx-2">
+        <!-- Nombre -->
+        <div class="mb-3 col-12 col-md-6 mx-auto">
+          <input
+            type="text"
+            class="form-control form-custom"
+            name="nombre"
+            id="nombre"
+            placeholder="Nombre"
+          />
+        </div>
+        
+        <!-- Apellido -->
+        <div class="mb-3 col-12 col-md-6 mx-auto">
+          <input
+            type="text"
+            class="form-control form-custom"
+            name="apellido"
+            id="apellido"
+            placeholder="Apellido"
+          />
+        </div>
+      </div>
+
+      <!-- CUIL -->
+      <div class="mb-3 col-12 col-md-6 mx-auto">
+        <input
+          type="text"
+          class="form-control form-custom"
+          name="telefono"
+          id="telefono"
+          placeholder="Telefono o Celular"
+        />
+      </div>
+
+      <div class="mb-4 col-12 col-md-6 mx-auto d-flex justify-content-center">
+        <button type="button" class="btn btn-primary" id="button-form">Continuar</button>
+      </div>
+      
+      <hr class="w-100 m-0 mb-4" />
+
+    </div>
+  </div>
+</form>
+{% endblock %}
+
+{%block script%}
+{{super()}}
+{% endblock %}

@@ -1,0 +1,38 @@
+{%extends 'home.html'%}
+
+{%block head%}
+{{super()}}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/user.css') }}">
+{%endblock%}
+
+{%block content%}
+<div class="row py-5 justify-content-center">
+    <div class="col-md-6 py-5">
+        <div class="container">
+            <h1 class="mb-4 text-center">Añadir Usuario-Alumno</h1>
+            <form action="" class="row row-cols-1 row-cols-sm-2 row-cols-md-2 p-6 justify-content-center">
+                <div class="col mb-2 text-center">
+                    <label for="user">Usuario</label>
+                    <input type="text" id="user" name="user">
+                </div>
+                <div class="col mb-2 text-center">
+                    <label for="carrera">Carrera</label>
+                    <input type="text" id="carrera" name="carrera"><br>
+
+                </div>
+                <div class="col mb-2 text-center">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre">
+                </div>
+                <div class="col mb-2 text-center">
+                    <label for="apellido">Apellido</label>
+                    <input type="text" id="apellido" name="apellido"><br>
+
+                </div>
+                <input class="mt-4" type="submit" value="Añadir">
+
+            </form>
+        </div>
+    </div>
+</div>
+{%endblock%}

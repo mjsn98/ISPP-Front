@@ -1,0 +1,38 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background: url('/static/img/background.jpg');
+  background-attachment: fixed;
+  background-repeat: repeat;
+  content: ' ';
+  background-position: 50% 0;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+}
+
+.login {
+  width: 350px;
+  box-shadow: 0px 20px 25px -10px rgba(0,0,0,0.5);
+  border-radius: 20px;
+  background-color: var(--background);
+}
+
+.login-container {
+  width: 100%;
+}
+
+.form-custom {
+  background: var(--background);
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #757575;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+}

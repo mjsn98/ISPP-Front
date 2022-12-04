@@ -1,0 +1,40 @@
+{% extends 'base/base.html' %}
+
+{%block head%}
+{{super()}}
+<link
+  rel="stylesheet"
+  href="{{url_for('static',filename='css/first_login.css')}}"
+/>
+{%endblock%}
+
+{% block titulo %}Recuperar Contraseña{% endblock %}
+
+{% block navbar%}
+{{super()}}
+{% endblock %}
+
+{% block content %}
+{{super()}}
+<form action="{{ url_for('auth.recuperar_contraseña') }}" class="form-usuario container d-flex justify-content-center align-items-center" method="POST">
+    <div class="container-md container">
+        <div class="card">
+            <h1 class="card-header display-12 text-center">Recuperación de Contraseña</h1>
+            <hr class="w-100 m-0 mb-4" />
+            <div class="mb-3 col-12 col-md-6 mx-auto">
+            <input
+                type="email"
+                class="form-control form-custom"
+                name="correo"
+                id="correo"
+                placeholder="Ingrese tu correo"
+            />
+            </div>
+            <div class="mb-4 col-12 col-md-6 mx-auto d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary" id="button-form">Enviar mail</button>
+            </div>
+        </div>
+
+    </div>
+  </form>
+{% endblock %}

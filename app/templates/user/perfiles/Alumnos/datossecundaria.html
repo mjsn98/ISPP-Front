@@ -1,0 +1,39 @@
+{%extends 'home.html'%}
+
+{%block head%}
+{{super()}}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/user.css') }}">
+{%endblock%}
+
+{%block content%}
+<div class="row py-5 justify-content-center">
+    <div class="col-md-6 py-5">
+        <div class="container">
+            <form>
+                <h2 class="text-center mb-4">Datos de Secundaria</h2>
+                <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 mb-4 justify-content-center">
+                    <div class="col mb-2 text-center">
+                        <label for="nombreInstitucion">Institucion</label>
+                        <input type="text" id="nombreInstitucion" name="nombreInstitucion">
+                    </div>
+                    <div class="col mb-2 text-center">
+                        <label for="AñoEgreso">Año de egreso</label>
+                        <input type="text" id="AñoEgreso" name="AñoEgreso">
+                    </div>
+                    <div class="col mb-2 text-center">
+                        <label for="Orientacion">Orientacion</label>
+                        <input type="text" id="Orientacion" name="Orientacion">
+                    </div>
+                    <div class="col mb-4 text-center">
+                        <label for="TituloSec">Titulo de secundario *</label>
+                        <input type="file" id="TituloSec" name="TituloSec">
+                    </div>
+                    <input type="submit" value="Guardar">
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+</div>
+{%endblock%}

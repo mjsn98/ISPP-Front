@@ -1,0 +1,166 @@
+{%extends 'home.html'%}
+
+{%block head%}
+{{super()}}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/user.css') }}">
+{%endblock%}
+
+{%block content%}
+<div class="row py-5">
+    <div class="col-2">
+    </div>
+    <div class="col-md-10 py-5">
+        <div class="m-4">
+            <form class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+                <h2 class="bg-light mb-4 col-md-12 col-sm-12 text-center" id="modDatos">Modificar/Actualizar Datos Personales </h2>
+                
+                <form class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+
+                    <div class="col mb-4">
+                        <label class="labelforms" for="cuil">Cuil *</label>
+                        <input type="text" id="cuil" name="cuil" placeholder="x-xx.xxx.xxx-x">
+                    </div>
+
+                    <div class="col mb-4">
+                        <label class="labelforms" for="nombre">Nombre *</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required="true">
+                    </div>
+
+                    <div class="col mb-4">
+                        <label class="labelforms" for="apellido">Apellido *</label>
+                        <input type="text" id="apellido" name="apellido" placeholder="Escribe tu apellido"
+                            required="true">
+                    </div>
+
+                    <div class="col mb-4">
+                        <label for="email">Email *</label>
+                        <input type="text" name="email" id="email" placeholder="nombre@ejemplo.com" required="true">
+                    </div>
+
+                    <div class="col mb-4">
+                        <label class="labelforms" for="telefono">Telefono *</label>
+                        <input type="text" id="telefono" name="telefono" required="true" placeholder="xxxxxxxxxx"
+                            required="true">
+                    </div>
+                    <div class="col mb-4">
+                        <label class="labelforms" for="fechanac">Fecha de Nac. *</label>
+                        <input type="text" name="fechanac" id="fechanac" placeholder="xx/xx/xxxx" required="true">
+                    </div>
+                    <div class="col">
+                        <div class="row">
+                            <label for="frenteDNI">Frente del DNI</label>
+                            <input type="file" id="frenteDNI" name="frenteDNI">
+                        </div>
+                        <div class="row">
+                            <label for="dorsoDNI">Dorso del DNI</label>
+                            <input type="file" id="dorsoDNI" name="dorsoDNI">
+                        </div>
+                        <div class="row">
+                            <label for="ActaNac">Acta de Nacimiento</label>
+                            <input type="file" id="ActaNac" name="ActaNac">
+                        </div>
+                    </div>
+                    <div class="col col-md-12 col-sm-12 mt-2 mb-2 text-end">
+                        <input type="button" class="btn btn-primary" value="Guardar">
+                    </div>
+                </form>
+
+                <h2 class="bg-light mb-4 col-md-12 text-center">Domicilio de Residencia</h2><br>
+
+                <form class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mb-4">
+                    <div class="col">
+                        <label class="labelforms" for="provincia">Provincia</label>
+                        <input type="text" name="provincia" id="provincia">
+                    </div>
+
+                    <div class="col">
+                        <label class="labelforms" for="departamento">Departamento</label>
+                        <input type="text" name="departamento" id="departamento">
+                    </div>
+
+                    <div class="col">
+                        <label class="labelforms" for="localidad">Localidad</label>
+                        <input type="text" name="localidad" id="localidad">
+                    </div>
+
+                    <div class="col">
+                        <label class="labelforms" for="barrio">Barrio</label>
+                        <input type="text" name="barrio" id="barrio">
+                    </div>
+                    <div class="col">
+                        <label class="labelforms" for="calle">Calle</label>
+                        <input type="text" name="calle" id="calle">
+                    </div>
+                    <div class="col">
+                        <label class="labelforms" for="altura">Altura</label>
+                        <input type="text" name="altura" id="altura">
+                    </div>
+                    <div class="col">
+                        <label class="labelforms" for="piso">Piso</label>
+                        <input type="text" name="piso" id="piso">
+                    </div>
+
+                    <div class="col">
+                        <label class="labelforms" for="numdepto">Numero</label>
+                        <input type="text" name="numdepto" id="numdepto">
+                    </div>
+
+                    <div class="col m-2 col-md-12 col-sm-12 text-end">
+                        <input type="button" class="btn btn-primary" value="Guardar">
+                    </div>
+                </form>
+
+
+                <h2 class="bg-light mb-4 col-md-12 text-center">Domicilio de Procedencia</h2>
+                <form class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mb-4">
+                    <div class="col">
+                        <label class="labelforms" for="provincia">Provincia</label>
+                        <input type="text" name="provincia" id="provincia">
+                    </div>
+
+                    <div class="col">
+                        <label class="labelforms" for="departamento">Departamento</label>
+                        <input type="text" name="departamento" id="departamento">
+                    </div>
+
+                    <div class="col">
+                        <label class="labelforms" for="localidad">Localidad</label>
+                        <input type="text" name="localidad" id="localidad">
+                    </div>
+
+                    <div class="col">
+                        <label class="labelforms" for="barrio">Barrio</label>
+                        <input type="text" name="barrio" id="barrio">
+                    </div>
+
+                    <div class="col">
+                        <label class="labelforms" for="calle">Calle</label>
+                        <input type="text" name="calle" id="calle">
+                    </div>
+
+                    <div class="col">
+                        <label class="labelforms" for="altura">Altura</label>
+                        <input type="text" name="altura" id="altura">
+                    </div>
+
+                    <div class="col">
+                        <label class="labelforms" for="piso">Piso</label>
+                        <input type="text" name="piso" id="piso">
+                    </div>
+
+                    <div class="col">
+                        <label class="labelforms" for="numdepto">Numero</label>
+                        <input type="text" name="numdepto" id="numdepto">
+                    </div>
+
+                    <div class="col col-md-12 col-sm-12 text-end">
+                        <input type="submit" class="btn btn-primary" value="Guardar">
+                    </div>
+
+                </form>
+            </form>
+        </div>
+    </div>
+</div>
+
+{%endblock%}

@@ -1,0 +1,72 @@
+{% extends 'base/base.html' %}
+
+{% block titulo %}Habilitar Usuario{% endblock%}
+
+{%block head%}
+{{super()}}
+<link
+  rel="stylesheet"
+  href="{{url_for('static',filename='css/first_login.css')}}"
+/>
+{%endblock%}
+
+{%block navbar%}
+{{super()}}
+{%endblock%}
+
+{% block content %}
+<form action="{{ url_for('auth.cambiar_contraseña') }}" class="form-usuario container d-flex justify-content-center align-items-center" method="POST">
+  <div class="container-md container">
+    <div class="card">
+      <h1 class="card-header display-12 text-center">Restablecimiento de Contraseña</h1>
+      <hr class="w-100 m-0 mb-4" />
+      <input type="hidden" name="id" value="{{ id }}" />
+
+      <div class="mb-3 col-12 col-md-6 mx-auto">
+        <input
+          type="password"
+          class="form-control form-custom"
+          name="password"
+          id="password"
+          placeholder="Ingrese una Nueva Contraseña"
+        />
+      </div>
+
+      <div class="mb-3 col-12 col-md-6 mx-auto">
+        <input
+          type="password"
+          class="form-control form-custom"
+          name="passwordconfirm"
+          id="passwordconfirm"
+          placeholder="Confirma tu Contraseña"
+        />
+      </div>
+
+      <div class="mb-4 col-12 col-md-6 mx-auto d-flex justify-content-center">
+        <button type="submit" class="btn btn-primary" id="button-form">Continuar</button>
+      </div>
+      
+      <hr class="w-100 m-0 mb-4" />
+
+      <div class="row mx-3 mb-4 font-size">
+        <span class="h6 mb-1">
+          Consideraciones Generales para la actualización de la Contraseña
+        </span>
+        <span class="text-muted mx-2">
+          &#183; Su contraseña no puede tener información personal
+        </span>
+        <span class="text-muted mx-2">
+          &#183; Su contraseña debe contener más de 8 caracteres
+        </span>
+        <span class="text-muted mx-2">
+          &#183; Su contraseña no puede ser completamente númerica
+        </span>
+      </div>
+    </div>
+  </div>
+</form>
+{% endblock %}
+
+{%block script%}
+{{super()}}
+{% endblock %}

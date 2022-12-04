@@ -1,0 +1,21 @@
+.container {
+  max-width: 520px;
+}
+
+.form-custom {
+  background: var(--background);
+  border: 0;
+  border-bottom: 1px solid #757575;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+body {
+  height: 100%;
+  background: url("/static/img/background.jpg");
+  background-attachment: fixed;
+  background-repeat: repeat;
+  content: " ";
+  background-position: 50% 0;
+}

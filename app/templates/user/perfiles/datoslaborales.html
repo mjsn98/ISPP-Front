@@ -1,0 +1,56 @@
+{%extends 'home.html'%}
+
+{%block head%}
+{{super()}}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/user.css') }}">
+{%endblock%}
+
+{%block content%}
+<div class="row py-5 justify-content-end">
+    <div class="col-md-10 py-5">
+        <div class="container">
+            <form action="">
+                <h2 class="bg-light text-center mb-4">Datos Laborales</h2>
+                <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 mb-4 justify-content-start">
+                    <div class="col mb-2">
+                        <label for="titulo">Título/s</label> <a href="DatosLaborales.html">+Agregar</a>
+                        <input type="text" id="titulo" name="titulo">
+                    </div>
+                    <div class="col mb-2">
+                        <label for="numControl">Numero de control</label>
+                        <input type="text" id="numControl" name="numControl">
+                    </div>
+                    <div class="col mb-2">
+                        <label for="InicioCargo">Fecha de inicio en el cargo</label>
+                        <input type="datetime" id="InicioCargo" name="InicioCargo">
+                    </div>
+                    <div class="col mb-2">
+                        <label for="revista">Situación de revista</label>
+                        <input type="text" id="revista" name="revista">
+                    </div>
+                    <div class="col mb-2">
+                        <label for="carrera">Carrera</label>
+                        <select name="carrera" id="carrera">
+                            <option value="ejemplo">Ejemplo</option>
+                        </select>
+                    </div>
+                    <div class="col mb-2">
+                        <label for="cargaHoraria">Carga horaria</label> <a href="HorasSem.html">+Editar carga horaria
+                            semanal</a>
+                        <input type="text" id="cargaHoraria" name="cargaHoraria">
+                    </div>
+                    <div class="col mb-2">
+                        <label for="turno">Turno del Cargo</label>
+                        <input type="text" id="turno" name="turno">
+                    </div>
+
+                    <div class="col col-md-12 col-sm-12 mt-2 mb-2 text-center">
+                        <input type="button" class="btn btn-primary" value="Guardar">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{%endblock%}

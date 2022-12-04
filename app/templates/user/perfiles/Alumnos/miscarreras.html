@@ -1,0 +1,85 @@
+{%extends 'home.html'%}
+
+{%block head%}
+{{super()}}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/user.css') }}">
+{%endblock%}
+
+{%block content%}
+<div class="row py-5">
+    <div class="col-3">
+    </div>
+    <div class="col-md-9 py-5">
+        <div class="container">
+            <div class="container d-flex">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Id</td>
+                            <td>Carrera</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for car in carposUsuario%}
+                        <tr>
+                            <form action="{{url_for('bedel.eliminar_carrera')}}" method="post">
+                                {% if car[2] == None %}
+                                    <td><input type="text" name="carpoid" value="{{car[0]}}"readonly="readonly" style="width: 30px;"></td>
+                                    <td>
+                                        <input class="edit" type="text" name="carreracarpo" value="{{car[1]}}"readonly="readonly" style="width: 350px;">
+                                        <input class="edit" type="text" name="plancarpo" value="{{car[3]}}"readonly="readonly" style="width: 100px;">
+                                        <input type="submit" value="X">
+                                        <input type="button" value="Editar">
+                                    </td>
+                                {% else %}
+                                    <td><input type="text" name="carpoid" value="{{car[0]}}"readonly="readonly" style="width: 30px;"></td>
+                                    <td>
+                                        <input class="edit" type="text" name="carreracarpo" value="{{car[1]}}"readonly="readonly" style="width: 200px;">
+                                        <input class="edit" type="text" name="orientacioncarpo" value="{{car[2]}}"readonly="readonly" style="width: 200x;">
+                                        <input class="edit" type="text" name="plancarpo" value="{{car[3]}}"readonly="readonly" style="width: 50px;">
+                                        <input type="submit" value="X">
+                                        <input type="button" value="Editar">
+                                    </td>
+                                {% endif %}
+                            </form>      
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+                <div class="card-header text-center">
+                    <h4 class="mb-0"> Añadir otra carrera</h4>
+                </div>
+                
+                <div class="card-text px-5 py-2">
+                    <form action="{{url_for('bedel.agregar_carrera')}}" method="post">
+                        <select name="Carpo">
+                            {% for car in carpo %}
+                                {% if car[2] == None%}
+                                <option value="{{car[0]}}">{{car[1]}} {{car[3]}}</option>
+                                {% else %}
+                                <option value="{{car[0]}}">{{car[1]}} {{car[2]}} {{car[3]}}</option>
+                                {% endif %}
+                                
+                            {% endfor %}
+                        </select><br>
+                        <input type="submit">
+                    </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script>
+    $(document).ready(function(){
+        console.log('hola');
+        $('.edit').dblclick(function(){
+            console.log(this.value);
+            $(this).attr('readonly', false);
+            console.log('hola');
+        })
+    })
+</script>
+{%endblock%}

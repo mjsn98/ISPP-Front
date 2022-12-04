@@ -1,0 +1,65 @@
+{%extends 'home.html'%}
+
+{%block head%}
+{{super()}}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/user.css') }}">
+{%endblock%}
+
+{%block content%}
+<div class="row py-5">
+    <div class="col-3">
+    </div>
+    <div class="col-md-9 py-5">
+        <div class="container">
+            <div class="container d-flex">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Id</td>
+                            <td>Nombre</td>
+                            <td>Apellido</td>
+                            <td>Carrera</td>
+                            <td>Observaciones</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for nom in nombreapellido %}
+                        <form action="{{url_for('bedel.resetear_contraseña')}}" method="post">
+                            <tr>
+                                <td>{{nom[3]}}</td> 
+                                <td>{{nom[0]}}</td> 
+                                <td>{{nom[1]}}</td>
+                                <td>{{nom[4]}}</td>
+                                <td>{{nom[2]}}</td>
+                                <input type="hidden" value="{{nom[5]}}" name="usuarioid">
+                                <td><input type="submit" value="Resetear Contraseña"></td>
+                            </tr>
+                        </form>
+                        
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+                <form action="{{url_for('bedel.crear_alumno')}}" method="post">
+                    <h1>Crear Alumno</h1>
+                    <input type="text" name="nombre" placeholder="Nombre">
+                    <input type="text" name="Apellido" placeholder="Apellido">
+                    <br>
+                    <input type="text" name="DNI" placeholder="DNI">
+                    <select name="Carpo">
+                        {% for car in carpo %}
+                            {% if car[2] == None%}
+                            <option value="{{car[0]}}">{{car[1]}} {{car[3]}}</option>
+                            {% else %}
+                            <option value="{{car[0]}}">{{car[1]}} {{car[2]}} {{car[3]}}</option>
+                            {% endif %}
+                            
+                        {% endfor %}
+                    </select><br>
+                    <input type="submit">
+            </div>
+        </div>
+    </div>
+</div>
+
+{%endblock%}

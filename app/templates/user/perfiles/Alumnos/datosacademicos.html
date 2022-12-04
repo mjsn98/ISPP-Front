@@ -1,0 +1,40 @@
+{%extends 'home.html'%}
+
+{%block head%}
+{{super()}}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/user.css') }}">
+{%endblock%}
+
+{%block content%}
+<div class="row py-5 justify-content-center">
+    <div class="col-md-6 py-5">
+        <div class="container">
+            <form>
+                <h2 class="text-center mb-4">Datos Academicos</h2>
+                <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 mb-4 justify-content-center">
+                    <div class="col mb-2 text-left">
+                        <label for="carrera">Carrera</label>
+                        <input type="text" id="nombreInstitucion" name="nombreInstitucion">
+                    </div>
+                    <!-- si tiene orientacion mostrar sino mostrar solo el plan -->
+                    <div class="col mb-2 text-left">
+                        <label for="plan">Plan</label>
+                        <input type="text" id="AñoEgreso" name="AñoEgreso">
+                    </div>
+                    <div class="col mb-2 text-left">
+                        <label for="AñoIngreso">Año de ingreso</label>
+                        <input type="text" id="Orientacion" name="Orientacion">
+                    </div>
+                    <div class="col mb-4 text-left">
+                        <label for="TituloSec">Ficha medica</label>
+                        <input type="file" id="TituloSec" name="TituloSec">
+                    </div>
+                    <input type="submit" value="Guardar">
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+</div>
+{%endblock%}

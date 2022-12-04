@@ -1,0 +1,27 @@
+{%extends 'home.html'%}
+
+{%block head%}
+{{super()}}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/user.css') }}">
+{%endblock%}
+
+{%block content%}
+<div class="row pt-5" style="margin:0;">
+
+    <div class="col-3">
+    </div>
+
+    <div class="col-md-9 pt-3">
+        <div class="container d-flex pt-3 justify-content-center">
+            <div class="card col-12 col-md-8 text-center">
+                <div class="card-header text-center">
+                    <h4 class="mb-0">Hola, <small>{{perfil}} </small> - <strong> {{consulta[1]}} {{consulta[2]}} </strong></h4>
+                </div>
+                <div class="card-text px-5 py-2">
+                    <h5 class="">Seleccione una opción de la barra de navegación para continuar</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}
